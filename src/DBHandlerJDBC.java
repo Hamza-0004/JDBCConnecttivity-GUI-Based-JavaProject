@@ -98,23 +98,6 @@ public class DBHandlerJDBC{
 
         url = "jdbc:mysql://localhost:3306/"+dbName;
         System.out.println(dbName+" Database is Selected");
-
-//        try{
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//
-//            Connection connection = DriverManager.getConnection(url,username,password);
-//
-//            Statement statement = connection.createStatement();
-//
-//            statement.executeUpdate("USE "+dbName+";");
-//            System.out.println(dbName+" Database is Selected");
-//
-//            connection.close();
-//        }
-//
-//        catch(Exception e){
-//            System.out.println(e);
-//        }
     }
 
     public int modifyDatabase(String query){
@@ -136,13 +119,6 @@ public class DBHandlerJDBC{
 
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
         StackTraceElement caller = stackTrace[2];
-
-//        if(caller.getMethodName().equals("showDatabases")){
-//            
-//        }
-//        else if (caller.getMethodName().equals(" ")){
-//
-//        }
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -178,7 +154,7 @@ public class DBHandlerJDBC{
                 records.add(record);
             }
             queryResult.setRecords(records);
-            
+
             connection.close();
             return queryResult;
         }
@@ -187,10 +163,6 @@ public class DBHandlerJDBC{
             queryResult.setExceptionMessage(e.toString());
         }
         return queryResult;
-    }
-    public static void main(String[] args){
-        DBHandlerJDBC obj = new DBHandlerJDBC();
-        obj.getDatabases();
     }
 
 }

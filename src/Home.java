@@ -49,7 +49,5 @@ public class Home extends JFrame {
 
         homeScreen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
-    //JTable jTable = new JTable();
-    //jTable.
 
 }
